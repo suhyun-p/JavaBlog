@@ -5,6 +5,7 @@ import com.suhpark.Blog.dao.HelloDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class HelloRestController {
     @Autowired
     private HelloDao helloDao;
 
-    @RequestMapping("/add")
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Hello add(Hello hello) {
 
         Hello helloData = helloDao.save(hello);
@@ -22,7 +23,7 @@ public class HelloRestController {
         return helloData;
     }
 
-    @RequestMapping("/list")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Hello> list(Model model) {
 
         List<Hello> helloList = helloDao.findAll();
@@ -30,7 +31,7 @@ public class HelloRestController {
         return helloList;
     }
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
         return "hello, world!";
     }

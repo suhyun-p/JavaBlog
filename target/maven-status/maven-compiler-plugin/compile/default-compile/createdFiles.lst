@@ -2,4 +2,3 @@ com/suhpark/Blog/dao/HelloDao.class
 com/suhpark/Blog/Entity/Hello.class
 com/suhpark/Blog/BlogApplication.class
 com/suhpark/Blog/Controller/HelloRestController.class
-com/suhpark/Blog/Config/SwaggerConfig.class
