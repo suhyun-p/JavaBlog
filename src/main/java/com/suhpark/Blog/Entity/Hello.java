@@ -6,6 +6,11 @@ import javax.persistence.Id;
 
 @Entity
 public class Hello {
+
+    public Hello(String name){
+        this.name = name;
+    }
+
     @Id
     @GeneratedValue
     int id;
